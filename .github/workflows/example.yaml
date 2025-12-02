@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: spring-projects/spring-petclinic
-          ref: b5a630b1994b5b2f3f590d1c398612cf6b955a59
+          ref: 1f89996e1ff53eb0d3990bbb68e382b118b1b556
 
       - name: Set up GraalVM (Java ${{ matrix.graalvm_java }})
         uses: graalvm/setup-graalvm@v1
@@ -35,7 +35,7 @@ jobs:
       - name: Show Java / GraalVM version
         run: |
           java -version
-          native-image --version || true
+          native-image --version
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
